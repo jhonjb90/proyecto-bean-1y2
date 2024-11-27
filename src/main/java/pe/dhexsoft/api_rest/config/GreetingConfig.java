@@ -9,12 +9,13 @@ import pe.dhexsoft.api_rest.service.GreetingService;
 public class GreetingConfig {
 
     @Bean
-    @Primary
+
     public GreetingService primaryGreetingService(){
         return() -> "Hola desde el primer metodo";
     }
 
     @Bean
+    @Primary
     public GreetingService SecondaryGreetingService(){
         return() -> "Hola desde el segundo metodo";
     }
