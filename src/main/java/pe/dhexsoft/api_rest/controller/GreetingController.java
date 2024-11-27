@@ -11,14 +11,19 @@ import pe.dhexsoft.api_rest.service.GreetingService;
 @RequestMapping("/greet")
 public class GreetingController {
 
-    private final GreetingService greetingService;
+    //ahora si lo quieres hacer con el autowired. seria de esta forma, agregando tambien tu "@qualifier"
+    @Autowired
+    @Qualifier("SecondaryGreetingService")
+    private GreetingService greetingService;
 
-    public GreetingController(@Qualifier("SecondaryGreetingService") GreetingService greetingService) {
-        this.greetingService = greetingService;
+
+    @GetMapping("/gt1")
+    public String greet(){
+        return greetingService.greet();
     }
 
-    @GetMapping()
-    public String greet(){
+    @GetMapping("/gt2")
+    public String greet2(){
         return greetingService.greet();
     }
 
