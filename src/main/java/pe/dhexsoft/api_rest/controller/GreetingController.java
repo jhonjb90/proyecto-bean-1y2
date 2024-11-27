@@ -13,6 +13,7 @@ public class GreetingController {
 
     //ahora si lo quieres hacer con el autowired. seria de esta forma, agregando tambien tu "@qualifier"
     @Autowired
+    @Qualifier("greetingServiceImpl2")
     private GreetingService greetingService;
 
 
