@@ -5,16 +5,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import pe.dhexsoft.api_rest.service.GreetingService;
 
-@Configuration
+//@Configuration
 public class GreetingConfig {
 
-    @Bean
-    @Primary
+  //  @Bean
+ //   @Primary
     public GreetingService primaryGreetingService(){
         return() -> "Hola desde el primer metodo";
     }
 
-    @Bean
+ //   @Bean
     public GreetingService SecondaryGreetingService(){
         return() -> "Hola desde el segundo metodo";
     }

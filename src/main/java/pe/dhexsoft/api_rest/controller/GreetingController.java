@@ -13,19 +13,14 @@ public class GreetingController {
 
     //ahora si lo quieres hacer con el autowired. seria de esta forma, agregando tambien tu "@qualifier"
     @Autowired
-    @Qualifier("SecondaryGreetingService")
     private GreetingService greetingService;
 
 
-    @GetMapping("/gt1")
+    @GetMapping()
     public String greet(){
         return greetingService.greet();
     }
 
-    @GetMapping("/gt2")
-    public String greet2(){
-        return greetingService.greet();
-    }
 
 
 
